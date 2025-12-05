@@ -6,6 +6,18 @@ actor "Читатель" as Reader
 actor "Библиотекарь" as Librarian
 actor "Администратор" as Admin
 
+' Варианты использования
+usecase "Регистрация пользователя" as UC_Register
+usecase "Просмотр и поиск книг" as UC_ViewSearch
+usecase "Бронирование книги" as UC_Book
+usecase "Отмена бронирования" as UC_CancelBooking
+usecase "Просмотр истории бронирований" as UC_History
+usecase "Управление книгами (добавление/удаление)" as UC_ManageBooks
+usecase "Выдача/возврат книг" as UC_IssueReturn
+usecase "Управление филиалами" as UC_ManageBranches
+usecase "Управление учетными записями" as UC_ManageUsers
+usecase "Просмотр аналитики" as UC_ViewAnalytics
+
 ' Здесь позже добавим варианты использования
 
 @enduml
