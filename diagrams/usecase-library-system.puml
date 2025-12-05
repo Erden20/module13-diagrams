@@ -1,5 +1,8 @@
 @startuml
 left to right direction
+skinparam packageStyle rectangle
+
+title Система управления сетью библиотек
 
 ' Акторы
 actor "Читатель" as Reader
@@ -18,7 +21,26 @@ usecase "Управление филиалами" as UC_ManageBranches
 usecase "Управление учетными записями" as UC_ManageUsers
 usecase "Просмотр аналитики" as UC_ViewAnalytics
 
-' Здесь позже добавим варианты использования
+' Связи актеров с вариантами использования
+Reader --> UC_Register
+Reader --> UC_ViewSearch
+Reader --> UC_Book
+Reader --> UC_CancelBooking
+Reader --> UC_History
+
+Librarian --> UC_ManageBooks
+Librarian --> UC_IssueReturn
+Librarian --> UC_ViewSearch  ' Наследует функциональность читателя
+
+Admin --> UC_ManageBranches
+Admin --> UC_ManageUsers
+Admin --> UC_ViewAnalytics
+Admin --> UC_ViewSearch  ' Наследует функциональность читателя
+
+' Пример использования include/extends
+UC_Book --> UC_ViewSearch : includes
+UC_CancelBooking --> UC_History : extends
 
 @enduml
+
 
