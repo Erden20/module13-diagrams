@@ -1,1 +1,7 @@
 
+@startuml
+left to right direction
+
+' Здесь мы позже добавим акторов и варианты использования
+
+@enduml
